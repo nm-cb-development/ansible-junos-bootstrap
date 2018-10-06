@@ -53,7 +53,7 @@ echo ".. pynacl"
 sudo -H PYTHONWARNINGS=ignore pip install -qq --upgrade --ignore-installed pynacl
 #
 echo "Install optional Python components"
-sudo -H PYTHONWARNINGS=ignore pip install -qq yamllint textfsm jmespath
+sudo -H PYTHONWARNINGS=ignore pip install -qq yamllint textfsm jmespath jxmlease
 #
 # Install latest Ansible version with pip
 #

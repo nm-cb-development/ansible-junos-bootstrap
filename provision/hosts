@@ -1,8 +1,8 @@
 [junos]
-leaf01 ip=10.0.1.11
-leaf02 ip=10.0.1.12
-spine03 ip=10.0.1.13
-spine04 ip=10.0.1.14
+spine01 ip=10.0.1.11
+spine02 ip=10.0.1.12
+leaf03 ip=10.0.1.13
+leaf04 ip=10.0.1.14
 
 [all:vars]
 ansible_user=root
