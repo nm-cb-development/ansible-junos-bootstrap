@@ -1,6 +1,6 @@
 # Vagrant test Junos Bootstrap
 
-One Paragraph of project description goes here
+This Repository is primarily meant as a testdrive for Ansible together with a couple of virtual Juniper machines
 
 ## Getting Started
 

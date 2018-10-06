@@ -69,11 +69,9 @@ sudo -H PYTHONWARNINGS=ignore pip install -qq --upgrade --ignore-installed napal
 #
 echo "Installing GIT"
 sudo apt-get -qq install git
-cd /vagrant
-git clone https://github.com/JNPRAutomate/vagrant-junos.git
-echo "Install the following on the host system"
-echo "vagrant plugin install vagrant-junos"
-echo "vagrant plugin install vagrant-host-shell"
+#Don't know if the vagrant-junos repo is needed yet
+#cd /vagrant
+#git clone https://github.com/JNPRAutomate/vagrant-junos.git
 echo "Installation complete. Let's test Ansible and NAPALM version"
 echo
 ansible-playbook --version
