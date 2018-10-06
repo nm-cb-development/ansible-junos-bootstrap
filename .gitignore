@@ -1,6 +1,5 @@
 # Ignore Vagrant directories
 .vagrant
-/Vagrantfile
 /topology.yml
 
 #Ignore fetched external repo(s)
