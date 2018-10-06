@@ -74,5 +74,7 @@ sudo apt-get -qq install git
 #git clone https://github.com/JNPRAutomate/vagrant-junos.git
 echo "Installation complete. Let's test Ansible and NAPALM version"
 echo
+echo "Installing Junos roles"
+sudo ansible-galaxy install juniper.junos
 ansible-playbook --version
 napalm-ansible

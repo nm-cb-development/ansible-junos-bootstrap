@@ -34,6 +34,11 @@ Vagrant.configure(2) do |config|
   
   config.vm.define 'ansible' do |ansible|
 	ansible.vm.box = "ubuntu/trusty64"
+	ansible.vm.network :forwarded_port, guest: 22, host: 12202, id: 'ssh'
+	ansible.vm.network "private_network", virtualbox__intnet: "management",
+                                      ip: "10.0.1.1/24", auto_config: true
+	ansible.vm.provision "file", source: "ansible.cfg", destination: "ansible.cfg" 
+    #ansible.vm.provision "file", source: "provision", destination: "provision"
 	ansible.vm.provision 'shell', inline: <<-SHELL
       sleep 30
 	  sudo /vagrant/install.sh
@@ -41,41 +46,56 @@ Vagrant.configure(2) do |config|
   end
   config.vm.define 'spine01' do |spine01|
 	spine01.vm.host_name = "spine01"
-    #spine01.vm.box = default_box
+	spine01.vm.network :forwarded_port, guest: 22, host: 2221, id: 'ssh'
     spine01.vm.network 'private_network',
                        virtualbox__intnet: 's01l03',
-                       ip: '169.254.13.1'#, auto_config: false
+                       ip: '169.254.13.1'
     spine01.vm.network 'private_network',
                        virtualbox__intnet: 's01l04',
-                       ip: '169.254.14.1'#, auto_config: false
+                       ip: '169.254.14.1'
     spine01.vm.network 'private_network',
                        virtualbox__intnet: 's01s02',
-                       ip: '169.254.12.1'#, auto_config: false
+                       ip: '169.254.12.1'
+	spine01.vm.network "private_network", 
+					   virtualbox__intnet: "management",
+                       ip: "10.0.1.11",
+                       netmask: "255.255.255.0"
 	config.vbguest.auto_update = false
-    #spine01.vm.provision 'shell', inline: <<-SHELL
-    #  sleep 30
-    #  FastCli -p 15 -c "configure
-    #  hostname spine01
-    #  interface Management1
-    #    ip address 192.168.56.101/24 secondary"
-    #SHELL
+	#spine01.vm.provision "file",
+	#	source: "./scripts/provision_spine01.sh", 
+	#	destination: '/tmp/provision_spine01.sh'
+	#spine01.vm.provision 'shell', inline: <<-SHELL
+	#	/usr/sbin/cli -f /tmp/provision_spine01.sh
+	#SHELL
+	#spine01.vm.provision :host_shell do |my_host_shell|
+	#	my_host_shell.inline = "vagrant ssh spine01 -c '/usr/sbin/cli -f /tmp/provision_spine01.sh'"
+	#end
+	#Vagrant.configure("2") do |config|
+	#	config.vm.provision "shell", inline: $script
+	#end
+	#spine01.vm.provision 'shell', inline: "/usr/sbin/cli -f /tmp/provision_spine01.sh"
   end
    config.vm.define 'spine02' do |spine02|
     spine02.vm.host_name = "spine02"
+	spine02.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh'
     spine02.vm.network 'private_network',
                        virtualbox__intnet: 's02l03',
-                       ip: '169.254.23.1'#, auto_config: false
+                       ip: '169.254.23.1'
     spine02.vm.network 'private_network',
                        virtualbox__intnet: 's02l04',
-                       ip: '169.254.24.1'#, auto_config: false
+                       ip: '169.254.24.1'
     spine02.vm.network 'private_network',
                        virtualbox__intnet: 's01s02',
-                       ip: '169.254.21.1'#, auto_config: false
+                       ip: '169.254.21.1'
+	spine02.vm.network "private_network", 
+					   virtualbox__intnet: "management",
+                       ip: "10.0.1.12",
+                       netmask: "255.255.255.0"
 	config.vbguest.auto_update = false
   end
   config.vm.define 'leaf03' do |leaf03|
     leaf03.vm.host_name = "leaf03"
-    leaf03.vm.box = default_box
+	leaf03.vm.network :forwarded_port, guest: 22, host: 2223, id: 'ssh'
     leaf03.vm.network 'private_network',
                        virtualbox__intnet: 's01l03',
                        ip: '169.254.31.1'#, auto_config: false
@@ -85,11 +105,16 @@ Vagrant.configure(2) do |config|
     leaf03.vm.network 'private_network',
                        virtualbox__intnet: 'l03l04',
                        ip: '169.254.34.1'#, auto_config: false
+	leaf03.vm.network "private_network", 
+					   virtualbox__intnet: "management",
+                       ip: "10.0.1.13",
+                       netmask: "255.255.255.0"
 	config.vbguest.auto_update = false
   end
 
   config.vm.define 'leaf04' do |leaf04|
     leaf04.vm.host_name = "leaf04"
+	leaf04.vm.network :forwarded_port, guest: 22, host: 2224, id: 'ssh'
     leaf04.vm.network 'private_network',
                        virtualbox__intnet: 's01l04',
                        ip: '169.254.41.1'#, auto_config: false
@@ -99,7 +124,12 @@ Vagrant.configure(2) do |config|
     leaf04.vm.network 'private_network',
                        virtualbox__intnet: 'l03l04',
                        ip: '169.254.43.1'#, auto_config: false
+	leaf04.vm.network "private_network", 
+					   virtualbox__intnet: "management",
+                       ip: "10.0.1.14",
+                       netmask: "255.255.255.0"
 	config.vbguest.auto_update = false
   end
 end
+
 

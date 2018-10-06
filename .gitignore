@@ -8,3 +8,7 @@ vagrant-junos
 # Ignore Ansible retry and log files 
 *.retry
 ansible.log
+
+#Ingnore directory
+notes
+scripts
