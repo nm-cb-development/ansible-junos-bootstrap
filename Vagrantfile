@@ -38,7 +38,7 @@ Vagrant.configure(2) do |config|
 	ansible.vm.network "private_network", virtualbox__intnet: "management",
                                       ip: "10.0.1.1/24", auto_config: true
 	ansible.vm.provision "file", source: "ansible.cfg", destination: "ansible.cfg" 
-    #ansible.vm.provision "file", source: "provision", destination: "provision"
+    ansible.vm.provision "file", source: "provision", destination: "provision"
 	ansible.vm.provision 'shell', inline: <<-SHELL
       sleep 30
 	  sudo /vagrant/install.sh
