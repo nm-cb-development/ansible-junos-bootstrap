@@ -2,6 +2,8 @@
 
 This Repository is primarily meant as a testdrive for Ansible together with a couple of virtual Juniper machines
 
+!! ATTENTION WORK IN PROGRESS / ANSIBLE PROVISIONING NOT WORKIN YET !!
+
 ## Getting Started
 
 These instructions will prepare the basic setup with an example lab for a small Junos network staged with some basic config by an Ansible host.
@@ -9,9 +11,9 @@ Copy the project files form Git and make sure the host system meets the prerequi
 
 ### Prerequisites
 
-Install vagrant https://www.vagrantup.com/downloads.html
-Install Virtualbox https://www.virtualbox.org/wiki/Downloads
-Install Junos plugins on the host system
+* Install vagrant https://www.vagrantup.com/downloads.html
+* Install Virtualbox https://www.virtualbox.org/wiki/Downloads
+* Install Junos plugins on the host system
 
 ```
 vagrant plugin install vagrant-junos
