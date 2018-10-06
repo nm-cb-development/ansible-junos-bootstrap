@@ -1,0 +1,11 @@
+# Ignore Vagrant directories
+.vagrant
+/Vagrantfile
+/topology.yml
+
+#Ignore fetched external repo(s)
+vagrant-junos
+
+# Ignore Ansible retry and log files 
+*.retry
+ansible.log
