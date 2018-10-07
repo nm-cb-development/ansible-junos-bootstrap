@@ -65,10 +65,18 @@ The Junos hosts used to test are : juniper/ffp-12.1X47-D15.4-packetmode (fetched
  | leaf03  |--------------| leaf04  |
  +---------+e3          e3+---------+
 ```
-## Running the tests
+## Running the playbooks
 
-Explain how to run the automated tests for this system
+Start off course with the Prerequisites and Installation. 
+Then test the setup by running a first playbook:
 
+[playbook_0.yml](./provision/playbooks.md#playbook_0)
+```
+vagrans ssh ansible
+sudo ansible-playbook provision/playbook_0.yml
+```
+More info and playbooks here:
+[playbook_1.yml](./provision/playbooks.md#playbook_1)
 
 ## Deployment
 
