@@ -1,0 +1,35 @@
+---
+device:
+   host_name: leaf04
+   asn: 110
+    
+loopback:
+   0:
+     name: loopback0
+     ip: 10.20.4.1
+
+link:
+   0:
+     interface: "ge-0/0/1"
+     name: to spine01
+     ip: 172.16.0.3
+     subnet: "31"
+     neighbor:
+       asn: 104
+       peer_ip: 172.16.0.2
+   1:
+     interface: "ge-0/0/2"
+     name: to spine02
+     ip: 172.16.0.9
+     subnet: "31"
+     neighbor:
+       asn: 105
+       peer_ip: 172.16.0.8
+   2:
+     interface: "ge-0/0/3"
+     name: to leaf03
+     ip: 172.16.0.11
+     subnet: "31"
+     neighbor:
+       asn: 109
+       peer_ip: 172.16.0.10

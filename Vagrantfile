@@ -49,13 +49,13 @@ Vagrant.configure(2) do |config|
 	spine01.vm.network :forwarded_port, guest: 22, host: 2221, id: 'ssh'
     spine01.vm.network 'private_network',
                        virtualbox__intnet: 's01l03',
-                       ip: '169.254.13.11'
+                       ip: '169.254.13.11', auto_config: false
     spine01.vm.network 'private_network',
                        virtualbox__intnet: 's01l04',
-                       ip: '169.254.14.11'
+                       ip: '169.254.14.11', auto_config: false
     spine01.vm.network 'private_network',
                        virtualbox__intnet: 's01s02',
-                       ip: '169.254.12.11'
+                       ip: '169.254.12.11', auto_config: false
 	spine01.vm.network "private_network", 
 					   virtualbox__intnet: "management",
                        ip: "10.0.1.11",
@@ -67,13 +67,13 @@ Vagrant.configure(2) do |config|
 	spine02.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh'
     spine02.vm.network 'private_network',
                        virtualbox__intnet: 's02l03',
-                       ip: '169.254.23.11'
+                       ip: '169.254.23.11', auto_config: false
     spine02.vm.network 'private_network',
                        virtualbox__intnet: 's02l04',
-                       ip: '169.254.24.11'
+                       ip: '169.254.24.11', auto_config: false
     spine02.vm.network 'private_network',
                        virtualbox__intnet: 's01s02',
-                       ip: '169.254.21.11'
+                       ip: '169.254.21.11', auto_config: false
 	spine02.vm.network "private_network", 
 					   virtualbox__intnet: "management",
                        ip: "10.0.1.12",
@@ -85,13 +85,13 @@ Vagrant.configure(2) do |config|
 	leaf03.vm.network :forwarded_port, guest: 22, host: 2223, id: 'ssh'
     leaf03.vm.network 'private_network',
                        virtualbox__intnet: 's01l03',
-                       ip: '169.254.31.11'
+                       ip: '169.254.31.11', auto_config: false
     leaf03.vm.network 'private_network',
                        virtualbox__intnet: 's02l03',
-                       ip: '169.254.32.11'
+                       ip: '169.254.32.11', auto_config: false
     leaf03.vm.network 'private_network',
                        virtualbox__intnet: 'l03l04',
-                       ip: '169.254.34.11'
+                       ip: '169.254.34.11', auto_config: false
 	leaf03.vm.network "private_network", 
 					   virtualbox__intnet: "management",
                        ip: "10.0.1.13",
@@ -104,13 +104,13 @@ Vagrant.configure(2) do |config|
 	leaf04.vm.network :forwarded_port, guest: 22, host: 2224, id: 'ssh'
     leaf04.vm.network 'private_network',
                        virtualbox__intnet: 's01l04',
-                       ip: '169.254.41.11'
+                       ip: '169.254.41.11', auto_config: false
     leaf04.vm.network 'private_network',
                        virtualbox__intnet: 's02l04',
-                       ip: '169.254.42.11'
+                       ip: '169.254.42.11', auto_config: false
     leaf04.vm.network 'private_network',
                        virtualbox__intnet: 'l03l04',
-                       ip: '169.254.43.11'
+                       ip: '169.254.43.11', auto_config: false
 	leaf04.vm.network "private_network", 
 					   virtualbox__intnet: "management",
                        ip: "10.0.1.14",
