@@ -74,7 +74,8 @@ vagrans ssh ansible
 sudo ansible-playbook provision/playbook_0.yml
 ```
 More info and playbooks here:
-[playbook_1.yml](./provision/playbooks.md#playbook_1)
+* [playbook_1.yml](./provision/playbooks.md#playbook_1)
+* 
 
 ## Deployment
 
