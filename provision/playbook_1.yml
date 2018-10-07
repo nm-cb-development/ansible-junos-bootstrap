@@ -1,13 +1,17 @@
 ---
- - name: Playbook 1 provisoning test
-   hosts: junos
-   connection: local
-   gather_facts: no
- 
-   tasks:
-   - name: Retrieve information from devices running Junos
-     hosts: junos
-   - raw: |
-     configure
-     set protocols lldp interface all
-     commit and-quit
+- name: deploy configuration to junos devices
+  hosts: all
+  connection: local
+  gather_facts: no
+  roles:
+    - Juniper.junos
+  tasks:
+    - name: Deploy config to device ... please wait
+      junos_install_config:
+        host: "{{ ansible_ssh_host }}"
+        port: "{{ ansible_ssh_port }}"
+        user: "root"
+        passwd: "Juniper"
+        comment: "configured by ansible"
+        file: "./playbook_1/{{ inventory_hostname }}.set"
+        logfile: "changes.log"
