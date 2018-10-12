@@ -10,16 +10,30 @@ system {
     }
 }
 interfaces {
-{% for int in link %}
-    {{ int.interface }} {
+    {{ link.0.interface }} {
         unit 0 {
-            description "{{ int.name }}";
+            description "{{ link.0.name }}";
             family inet {
-                address {{ int.ip }}/{{ int.subnet }};
+                address {{ link.0.ip }}/{{ link.0.subnet }};
             }
         }
     }
-{% endfor %}
+	{{ link.1.interface }} {
+        unit 0 {
+            description "{{ link.1.name }}";
+            family inet {
+                address {{ link.1.ip }}/{{ link.1.subnet }};
+            }
+        }
+    }
+	{{ link.2.interface }} {
+        unit 0 {
+            description "{{ link.2.name }}";
+            family inet {
+                address {{ link.2.ip }}/{{ link.2.subnet }};
+            }
+        }
+    }
 }
 protocols {
     lldp {
@@ -32,14 +46,19 @@ protocols {
             type external;
             local-as {{ device.asn }};
             multipath multiple-as;
-{% for int in link %}{% if int.neighbor is defined %}
-            neighbor {{ neighbor[int.neighbor].peer_ip }} {
-                peer-as {{ neighbor[int.neighbor].asn }};
+            neighbor {{ link.0.neighbor.peer_ip }} {
+                peer-as {{ link.0.neighbor.asn }};
             }
-{%endif%}{%endfor%}
+			neighbor {{ link.1.neighbor.peer_ip }} {
+                peer-as {{ link.1.neighbor.asn }};
+            }
+			neighbor {{ link.2.neighbor.peer_ip }} {
+                peer-as {{ link.2.neighbor.asn }};
+            }
         }
     }
 }
+
 routing-options {
     router-id {{ loopback.0.ip }};
     forwarding-table {

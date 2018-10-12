@@ -1,0 +1,7 @@
+{% for line_list in extLines %}
+{% for location_list in location %}
+{% if ((location_list.location == line_list.location) and ( line_list.ip.cb_gw is defined )) %}
+ - {{line_list.ip.cb_gw}}/32		# {{line_list.location}}-{{line_list.ordinal[0:3]}}-internet - {{location_list.type}} {{location_list.commName}} ({{line_list.provider}})  
+{% endif %}
+{% endfor %}
+{% endfor %}

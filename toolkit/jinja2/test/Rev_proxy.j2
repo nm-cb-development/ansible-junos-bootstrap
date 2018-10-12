@@ -1,0 +1,10 @@
+{% for port_list in ports %}
+{% for line_list in extLines %}
+{% for location_list in location %}
+{% if (((location_list.type == "Warehouse") or (location_list.type == "Office") )and 
+((location_list.location == line_list.location) and ( line_list.ip.cb_gw is defined ) ) ) %}
+-A INPUT -s {{line_list.ip.cb_gw}}/32 -p tcp -m tcp --dport {{port_list.ToPort}} -m state --state NEW -m comment --comment "{{line_list.location}}-{{line_list.ordinal}}-internet" -j ACCEPT
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endfor %}

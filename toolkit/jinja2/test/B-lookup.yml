@@ -4,15 +4,16 @@ device:
    asn: 109
     
 loopback:
- - name: loopback0
-   ip: 10.20.3.1
+   0:
+     name: loopback0
+     ip: 10.20.3.1
 
 link:
  - interface: "ge-0/0/1"
    name: to spine01
    ip: 172.16.0.1
    subnet: "31"
-   neighbor: spine02
+   neighbor: spine01
  - interface: "ge-0/0/2"
    name: to spine02
    ip: 172.16.0.7

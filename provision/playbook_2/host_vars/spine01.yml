@@ -4,32 +4,33 @@ device:
    asn: 104
     
 loopback:
-   0:
-     name: loopback0
-     ip: 10.20.1.1
+ - name: loopback0
+   ip: 10.20.1.1
 
 link:
-   0:
-     interface: "ge-0/0/1"
-     name: to leaf03
-     ip: 172.16.0.0
-     subnet: "31"
-     neighbor:
-       asn: 109
-       peer_ip: 172.16.0.1
-   1:
-     interface: "ge-0/0/2"
-     name: to leaf04
-     ip: 172.16.0.2
-     subnet: "31"
-     neighbor:
-       asn: 110
-       peer_ip: 172.16.0.3
-   2:
-     interface: "ge-0/0/3"
-     name: to spine02
-     ip: 172.16.0.4
-     subnet: "31"
-     neighbor:
-       asn: 105
-       peer_ip: 172.16.0.5
+ - interface: "ge-0/0/1"
+   name: to leaf03
+   ip: 172.16.0.0
+   subnet: "31"
+   neighbor: leaf03
+ - interface: "ge-0/0/2"
+   name: to leaf04
+   ip: 172.16.0.2
+   subnet: "31"
+   neighbor: leaf04
+ - interface: "ge-0/0/3"
+   name: to spine02
+   ip: 172.16.0.4
+   subnet: "31"
+   neighbor: spine02
+
+neighbor:
+   spine02:
+     asn: 105
+     peer_ip: 172.16.0.5
+   leaf03:
+     asn: 109
+     peer_ip: 172.16.0.1
+   leaf04:
+     asn: 110
+     peer_ip: 172.16.0.3

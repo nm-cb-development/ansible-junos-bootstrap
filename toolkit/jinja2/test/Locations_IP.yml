@@ -1,0 +1,147 @@
+extLines:
+ - subnet: 185.184.206.248
+   subnetmask: 255.255.255.248
+   cidr: "29"
+   ordinal: primary
+   type: fiber
+   provider: eurofiber
+   ip:
+     dgw: 185.184.206.249
+     cb_gw: 185.184.206.250
+   location: nlro02
+ - subnet: 80.113.65.128
+   subnetmask: 255.255.255.248
+   cidr: "29"
+   ordinal: secondary
+   type: fiber
+   provider: ziggo
+   ip:
+     dgw: 80.113.65.129
+     cb_gw: 185.184.206.250
+   location: nlro02
+ - subnet: 185.184.206.248
+   subnetmask: 255.255.255.248
+   cidr: "29"
+   ordinal: tertiary
+   type: coax
+   provider: ziggo
+   ip:
+     dgw: 213.127.235.65
+     cb_gw: 213.127.235.69
+   location: nlro02
+ - subnet: 188.203.234.176
+   subnetmask: 255.255.255.248
+   cidr: "29"
+   ordinal: quaternary
+   type: dsl
+   provider: kpn
+   ip:
+     dgw: 188.203.234.177
+     cb_gw: 188.203.234.179
+   location: nlro02
+ - subnet: 87.215.43.64
+   subnetmask: 255.255.255.248
+   cidr: "29"
+   ordinal: primary
+   type: fiber
+   provider: tele2
+   ip:
+     dgw: 87.215.43.64
+     cb_gw: 185.184.206.250
+   location: nlti01
+ - subnet: 194.150.14.144
+   subnetmask: 255.255.255.240
+   cidr: "28"
+   ordinal: secondary
+   type: ipac
+   provider: interoute
+   ip:
+     dgw: 194.150.14.145
+     cb_gw: 194.150.14.148
+   location: nlti01
+ - subnet: 62.133.122.70
+   subnetmask: 255.255.255.255
+   cidr: "32"
+   ordinal: tertiary
+   type: 4g
+   provider: kpn
+   ip:
+     dgw: 62.133.122.70
+     cb_gw: 62.133.122.70
+   location: nlti01
+ - subnet: 31.149.199.0
+   subnetmask: 255.255.255.248
+   cidr: "29"
+   ordinal: primary
+   type: dsl
+   provider: kpn
+   ip:
+     dgw: 31.149.199.6
+     cb_gw: 31.149.199.5
+   location: ndp01
+ - subnet: 194.122.164.72
+   subnetmask: 255.255.255.248
+   cidr: "29"
+   ordinal: secondary
+   type: 4g
+   provider: kpn
+   ip:
+     dgw: 194.122.164.76
+     cb_gw: 194.122.164.75
+   location: nldp01 
+ - subnet: 89.20.176.0
+   subnetmask: 255.255.255.248
+   cidr: "29"
+   ordinal: primary
+   type: fiber
+   provider: eurofiber
+   ip:
+     dgw: 31.149.199.6
+     cb_gw: 31.149.199.5
+   location: nlro03
+ - subnet: 92.111.9.192
+   subnetmask: 255.255.255.248
+   cidr: "29"
+   ordinal: secondary
+   type: coax
+   provider: ziggo
+   ip:
+     dgw: 194.122.164.76
+     cb_gw: 194.122.164.75
+   location: nlro03
+ - subnet: 37.74.11.56
+   subnetmask: 255.255.255.248
+   cidr: "29"
+   ordinal: tertiary
+   type: dsl
+   provider: kpn
+   ip:
+     dgw: 37.74.11.57
+   location: nlro03
+ 
+location:
+ - location: nlti01
+   commName: Tilburg
+   type: Warehouse
+   city: Tilburg
+ - location: nlro02
+   commName: Weena
+   type: Office
+   city: Rotterdam
+ - location: nldp01
+   commName: Utrecht
+   type: Depot
+   city: Utrecht
+ - location: nlro03
+   commName: Oostplein
+   type: Store
+   city: Rotterdam
+     
+ports:
+ - protocol: tcp
+   FromPort: 80
+   ToPort: 80
+ - protocol: tcp
+   FromPort: 443
+   ToPort: 443
+   
