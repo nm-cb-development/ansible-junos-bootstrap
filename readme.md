@@ -74,12 +74,12 @@ Then test the setup by running a first playbook:
 
 [playbook_0.yml](./provision/playbooks.md#playbook_0)
 ```
-vagrans ssh ansible
+vagrant ssh ansible
 sudo ansible-playbook provision/playbook_0.yml
 ```
 More info and playbooks here:
-* [playbook_1.yml](./provision/playbooks.md#playbook_1)
-* 
+* [playbook_1.yml](./provision/playbooks.md#playbook_1) #provision lldp to verify connections
+* [playbook_2.yml](./provision/playbooks.md#playbook_1) #provision lldp to verify connections
 
 ## Deployment
 
