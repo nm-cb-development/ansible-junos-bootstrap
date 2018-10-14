@@ -1,7 +1,7 @@
 [junos]
-spine01 ip=10.0.1.11 ansible_ssh_host=10.0.1.11
-spine02 ip=10.0.1.12 ansible_ssh_host=10.0.1.12
-leaf03 ip=10.0.1.13 ansible_ssh_host=10.0.1.13
+spine01 ip=10.0.1.2 ansible_ssh_host=10.0.1.2
+spine02 ip=10.0.1.6 ansible_ssh_host=10.0.1.6
+leaf03 ip=10.0.1.10 ansible_ssh_host=10.0.1.10
 leaf04 ip=10.0.1.14 ansible_ssh_host=10.0.1.14
 
 [all:vars]

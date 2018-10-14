@@ -17,7 +17,9 @@
 
    - name: Merge configuration data from a file and commit
      juniper_junos_config: 
-        host: "{{ ansible_ssh_host }}" 
+        host: "{{ ansible_ssh_host }}"
+        port: 830 
+        timeout: 15
         load: "merge"
         format: "text"
         src: "/tmp/{{ device.host_name }}.conf"
