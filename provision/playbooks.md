@@ -6,14 +6,14 @@
 
 ## playbook_1
 
-[A test drive playbook provisioning the junos boxes with lldp](https://github.com/roelsieg/ansible-junos-bootstrap/blob/master/provision/playbook_1.yml)
+[A test drive playbook to provision lldp to verify connections](https://github.com/roelsieg/ansible-junos-bootstrap/blob/master/provision/playbook_1.yml)
 ```
 vagrant ssh ansible
 sudo ansible-playbook ./provision/playbook_1.yml
 ```
 ## playbook_2
 
-* [A playbook provisioning the junos boxes with simple BGP](https://github.com/roelsieg/ansible-junos-bootstrap/blob/master/provision/playbook_2/playbook_2.yml)
+* [A playbook to provision the junos boxes with simple BGP setup](https://github.com/roelsieg/ansible-junos-bootstrap/blob/master/provision/playbook_2/playbook_2.yml)
 * [Several host_var file to define values in YAML files](https://github.com/roelsieg/ansible-junos-bootstrap/tree/master/provision/playbook_2/host_vars)
 * [One template to provision all 4 boxes](https://github.com/roelsieg/ansible-junos-bootstrap/blob/master/provision/playbook_2/template.j2)
 ```
@@ -26,7 +26,6 @@ vagrant ssh spine01
 show lldp neighbor
 show interfaces terse | match inet
 show bgp summary
-show route receive-protocol bgp 172.16.0.1
-show route receive-protocol bgp 172.16.0.3
-show route receive-protocol bgp 172.16.0.5
+show route receive-protocol bgp 172.16.0.x
+show route advertising-protocol bgp 172.16.0.x
 ```

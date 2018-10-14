@@ -78,8 +78,8 @@ vagrant ssh ansible
 sudo ansible-playbook provision/playbook_0.yml
 ```
 More info and playbooks here:
-* [playbook_1.yml](./provision/playbooks.md#playbook_1) #provision lldp to verify connections
-* [playbook_2.yml](./provision/playbooks.md#playbook_1) #provision lldp to verify connections
+* [playbook_1.yml](./provision/playbooks.md#playbook_1) #A playbook to provision lldp to verify connections
+* [playbook_2.yml](./provision/playbooks.md#playbook_1) #A playbook to provision the junos boxes with simple BGP setup
 
 ## Deployment
 
