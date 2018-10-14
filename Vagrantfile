@@ -7,7 +7,7 @@
 #default_box = 'image_to_use'
 default_box = "juniper/ffp-12.1X47-D15.4-packetmode"
 
-# Bowtie / Mesh Topology
+# Mesh Topology
 #      +-------------------------------------+
 #      |                                     |
 # +---------+e3          e3+---------+       |
