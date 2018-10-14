@@ -13,7 +13,9 @@ sudo ansible-playbook ./provision/playbook_1.yml
 ```
 ## playbook_2
 
-[A playbook provisioning the junos boxes with simple BGP](https://github.com/roelsieg/ansible-junos-bootstrap/blob/master/provision/playbook_2/playbook_2.yml)
+* [A playbook provisioning the junos boxes with simple BGP](https://github.com/roelsieg/ansible-junos-bootstrap/blob/master/provision/playbook_2/playbook_2.yml)
+* [Several host_var file to define values in YAML files](https://github.com/roelsieg/ansible-junos-bootstrap/tree/master/provision/playbook_2/host_vars)
+* [One template to provision all 4 boxes](https://github.com/roelsieg/ansible-junos-bootstrap/blob/master/provision/playbook_2/template.j2)
 ```
 vagrant ssh ansible
 sudo ansible-playbook ./provision/playbook_2/playbook_2.yml
