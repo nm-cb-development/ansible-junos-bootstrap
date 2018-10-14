@@ -84,6 +84,7 @@ No clue yet howto deploy this on a live system!
 ## Built With
 
 * [ipspace install.sh](from https://github.com/ipspace/NetOpsWorkshop.git) - Basic setup of the ansible host
+  See also https://www.ipspace.net/Ansible_for_Networking_Engineers
 
 
 ## Authors
