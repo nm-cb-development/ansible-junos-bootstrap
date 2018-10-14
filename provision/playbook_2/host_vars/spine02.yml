@@ -4,7 +4,8 @@ device:
    asn: 105
 
 loopback:
- - name: loopback0
+ - interface: lo0
+   name: loopback0
    ip: 10.20.2.1
 
 link:

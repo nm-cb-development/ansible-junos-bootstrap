@@ -20,6 +20,16 @@ interfaces {
         }
     }
 {% endfor %}
+{% for loopback in loopback %}
+    {{ loopback.interface }} {
+        unit 0 {
+            description "{{ loopback.name }}";
+            family inet {
+                address {{ loopback.ip }};
+            }
+        }
+    }
+{% endfor %}
 }
 protocols {
     lldp {
