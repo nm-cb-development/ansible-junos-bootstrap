@@ -18,3 +18,12 @@ sudo ansible-playbook ./provision/playbook_1.yml
 vagrant ssh ansible
 sudo ansible-playbook ./provision/playbook_2/playbook_2.yml
 ```
+Verify connectivet by some basic commands:
+```
+vagrant ssh spine01
+show lldp neighbor
+show interfaces terse | match inet
+show route receive-protocol bgp 172.16.0.1
+show route receive-protocol bgp 172.16.0.3
+show route receive-protocol bgp 172.16.0.5
+```

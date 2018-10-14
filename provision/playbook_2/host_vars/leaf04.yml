@@ -30,7 +30,7 @@ neighbor:
      peer_ip: 172.16.0.10
    spine02:
      asn: 105
-     peer_ip: 172.16.0.6
+     peer_ip: 172.16.0.8
    spine01:
      asn: 104
-     peer_ip: 172.16.0.0
+     peer_ip: 172.16.0.2
