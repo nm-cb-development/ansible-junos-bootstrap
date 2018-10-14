@@ -92,7 +92,7 @@ Vagrant.configure(2) do |config|
     leaf03.vm.network 'private_network',
                        virtualbox__intnet: 'l03l04',
                        ip: '169.254.34.11', auto_config: false
-	leaf03.vm.network "private_network", 
+	leaf03.vm.network "private_network",
 					   virtualbox__intnet: "management",
                        ip: "10.0.1.13",
                        netmask: "255.255.255.0"
@@ -111,7 +111,7 @@ Vagrant.configure(2) do |config|
     leaf04.vm.network 'private_network',
                        virtualbox__intnet: 'l03l04',
                        ip: '169.254.43.11', auto_config: false
-	leaf04.vm.network "private_network", 
+	leaf04.vm.network "private_network",
 					   virtualbox__intnet: "management",
                        ip: "10.0.1.14",
                        netmask: "255.255.255.0"

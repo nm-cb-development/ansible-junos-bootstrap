@@ -2,7 +2,7 @@
 device:
    host_name: spine02
    asn: 105
-    
+
 loopback:
  - name: loopback0
    ip: 10.20.2.1

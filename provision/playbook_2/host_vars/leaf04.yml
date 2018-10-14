@@ -2,7 +2,7 @@
 device:
    host_name: leaf04
    asn: 110
-    
+
 loopback:
  - name: loopback0
    ip: 10.20.4.1

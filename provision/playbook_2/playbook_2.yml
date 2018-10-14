@@ -1,16 +1,16 @@
 ---
 - name: Build and deploy configuration
   hosts: all
-  connection: netconfvi
+  connection: local
   gather_facts: no
   roles:
     - juniper.junos
   tasks:
    - name: Build configuration
-      template: src=template.j2 dest=/tmp/{{ inventory_hostname }}.conf
+     template: src=template.j2 dest=/tmp/{{ device.host_name }}.conf
  
    - name: Checking NETCONF connectivity
-      wait_for: 
+     wait_for: 
         host: "{{ ansible_ssh_host }}" 
         port: 830  
         timeout: 5
